@@ -47,10 +47,10 @@ public class Generator {
             String realmPrivateKey = Files.readAllLines(Paths.get("your_private_key.pem")).get(0);
             PrivateKey privateKey = decodePrivateKey(pemToDer(realmPrivateKey));
             List list = new ArrayList<String>();
-            list.add(prefix+"A");
+           // list.add(prefix+"A");
             list.add(prefix+"U");
-            User user = new User(1,"test@mail.ru", "ru");
-            System.out.println("Bearer "+createToken("test",list,user,privateKey));
+            User user = new User(30,"mrdaddy@mail.ru", "ru");
+            System.out.println("Bearer "+createToken("mrdaddy",list,user,privateKey));
 
         } catch (IOException | NoSuchAlgorithmException | InvalidKeySpecException | NoSuchProviderException e) {
             e.printStackTrace();
